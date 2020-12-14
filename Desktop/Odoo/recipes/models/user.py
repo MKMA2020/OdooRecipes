@@ -11,4 +11,4 @@ class User(models.model):
     password = fields.char(required=True)
     lastAccess = field.datetime(required=True)
     lastPasswordChange = field.datetime(required=True)
-    type = field.selection([('n',Normal),('p',Premium),('a',Admin)])
+    type = field.selection([('normal',Normal),('premium',Premium),('admin',Admin)])
