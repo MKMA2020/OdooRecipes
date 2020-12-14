@@ -1,8 +1,17 @@
-from odoo import models
+from odoo import models, fields
 
-class Menu(models.model):
+class Menu(models.Model):
     __name = 'recipes.menu'
-   
-    id = fields.Integer(required=True),
-    name = fields.char(required=True),
-    type = fields.selection([('breakfast','Breakfast'), ('lunch','Lunch'), ('snack','Snack'), ('dinner','Dinner')],'Tipo')
+       
+    name = fields.Char(required=True)
+    
+    menuType = fields.Selection([
+                           ('breakfast','Breakfast'),
+                           ('lunch','Lunch'),
+                           ('snack','Snack'),
+                           ('dinner','Dinner')
+                           ],'Tipo')(required=True)
+    
+    user_id = fields.Many2one('res.users', string='Menu owner')
+    
+    menuRel_id = fields.One2many('res.MenuRecipeRel', string='Menu has recipes')

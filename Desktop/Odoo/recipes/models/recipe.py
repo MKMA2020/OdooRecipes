@@ -1,13 +1,31 @@
-from odoo import models
+from odoo import models, fields
 
-class Recipe(models.model):
+class Recipe(models.Model):
     __name = 'recipes.recipe'
-    id = fields.Integer(requiered=True)
-    name = fields.Char(requiered=True)
-    ingredient = fields.Char(requiered=True)
-    type = fields.selection([('starter','Starter'), ('main','Main'), ('main2','Second Main'),('dessert','Dessert'), ('sides','Sides'), ('drink','Drinks') ],'Type', default='breakfast')
+        
+    name = fields.Char(required=True)
     
-    kCal = fields.float (requiered = True)
-    verified = fields.Boolean (requiered = True)
+    ingredient = fields.Char(required=True)
+    
+    recipeType = fields.Selection([
+                           ('starter', 'Starter'),
+                           ('main', 'Main'),
+                           ('main2', 'Second Main'),
+                           ('dessert', 'Dessert'),
+                           ('sides', 'Sides'),
+                           ('drink', 'Drinks')
+                           ], 'Type')
+    
+    kCal = fields.Float (required=True)
+    
+    verified = fields.Boolean (required=True)
+    
+    ingredients = fields.Many2many('recipes.ingredient', string='Contains ingredients')
+    
+    user_id = fields.Many2one('res.user', string='Recipe owner')
+    
+    Comments = fields.One2many('recipes.UserRecipeRel', string='Recipe commented')
+    
+    Menus = fields.One2many('recipes.MenuRecipeRel', string='Recipes contained by menu')
 
 
