@@ -1,7 +1,7 @@
-from odoo import models, fields
+from odoo import models,fields,api
 
 class Menu(models.Model):
-    __name = 'recipes.menu'
+    _name = 'recipes.menu'
        
     name = fields.Char(required=True)
     
@@ -10,8 +10,8 @@ class Menu(models.Model):
                            ('lunch','Lunch'),
                            ('snack','Snack'),
                            ('dinner','Dinner')
-                           ],'Tipo')(required=True)
+                           ],string = 'Tipo', required=True)
     
     user_id = fields.Many2one('res.users', string='Menu owner')
     
-    menuRel_id = fields.One2many('res.MenuRecipeRel', string='Menu has recipes')
+    menuRel_id = fields.One2many('recipes.menureciperel', string='Menu has recipes')

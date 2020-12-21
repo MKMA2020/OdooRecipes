@@ -1,7 +1,7 @@
-from odoo import models, fields
+from odoo import models,fields,api
 
 class Recipe(models.Model):
-    __name = 'recipes.recipe'
+    _name = 'recipes.recipe'
         
     name = fields.Char(required=True)
     
@@ -14,7 +14,7 @@ class Recipe(models.Model):
                            ('dessert', 'Dessert'),
                            ('sides', 'Sides'),
                            ('drink', 'Drinks')
-                           ], 'Type')
+                           ],string = 'Type',required=True)
     
     kCal = fields.Float (required=True)
     
@@ -22,10 +22,11 @@ class Recipe(models.Model):
     
     ingredients = fields.Many2many('recipes.ingredient', string='Contains ingredients')
     
-    user_id = fields.Many2one('res.user', string='Recipe owner')
+    user_id = fields.Many2one('res.users', string='Recipe owner')
     
-    Comments = fields.One2many('recipes.UserRecipeRel', string='Recipe commented')
+    comments = fields.One2many('recipes.userreciperel', string='Recipe commented')
     
-    Menus = fields.One2many('recipes.MenuRecipeRel', string='Recipes contained by menu')
+    menus = fields.One2many('recipes.menureciperel', string='Recipes contained by menu')
+    
 
 

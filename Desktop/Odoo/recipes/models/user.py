@@ -1,13 +1,13 @@
-from odoo import models, fields
+from odoo import models,fields,api
 
 class User(models.Model):
-    __inherit = 'res.users'
+    _inherit = 'res.users'
     
     userType = fields.Selection([
-                           ('normal','Normal'),
-                           ('premium','Premium'),
-                           ('admin','Admin')
-                           ])(required=True)
+                           ('normal', 'Normal'),
+                           ('premium', 'Premium'),
+                           ('admin', 'Admin')
+                           ],string = 'Type',required=True)
                            
     ingredients_id = fields.One2many('recipes.ingredient', string='Ingredients created')
     
@@ -15,4 +15,4 @@ class User(models.Model):
     
     recipes_id = fields.One2many('recipes.recipe', string='Recipes created')
     
-    UserRel_id = fields.One2many('res.UserRecipeRel', string='Commenter')
+    UserRel_id = fields.One2many('recipes.userreciperel', string='Commenter')

@@ -1,7 +1,7 @@
-from odoo import models, fields
+from odoo import models,fields,api
 
 class Ingredient(models.Model):
-    __name = 'recipes.ingredient'
+    _name = 'recipes.ingredient'
         
     name = fields.Char(required=True)
     
@@ -20,7 +20,7 @@ class Ingredient(models.Model):
                            ('meat','Meat'),
                            ('drink','Drink'),
                            ('dessert','Dessert')
-                           ],'Type')(required=True)
+                           ],string='Type',required=True)
     
     user_id = fields.Many2one('res.users', string='Ingredient creator')
     
