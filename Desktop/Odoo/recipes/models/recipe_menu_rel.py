@@ -17,7 +17,8 @@ class MenuRecipeRel(models.Model):
     menu_id = fields.Many2one('recipes.menu',
                               string='Menu that contains',
                               ondelete='cascade')
-   
+    #menuRecipeType field for the menuRecipeType model. Selection and required
+    #type.  
     menuRecipeType = fields.Selection([
                                       ('starter', 'Starter'),
                                       ('main', 'Main'),
