@@ -14,4 +14,4 @@ class Menu(models.Model):
     
     user_id = fields.Many2one('res.users', string='Menu owner')
     
-    menurel_id = fields.One2many('recipes.menureciperel', string='Menu has recipes')
+    menurel_id = fields.One2many('recipes.menureciperel', 'recipe_id', string='Menu has recipes')

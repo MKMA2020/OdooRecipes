@@ -25,3 +25,5 @@ class Ingredient(models.Model):
     user_id = fields.Many2one('res.users', string='Ingredient creator')
     
     menus = fields.Many2many('recipes.menu', string='Part of menus')
+    
+    recipes = fields.Many2many('recipes.recipe', string='Part of recipes')

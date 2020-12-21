@@ -22,9 +22,9 @@ class Recipe(models.Model):
     
     user_id = fields.Many2one('res.users', string='Recipe owner')
     
-    comments = fields.One2many('recipes.userreciperel', string='Recipe commented')
+    comments = fields.One2many('recipes.userreciperel', 'user_id', string='Recipe commented')
     
-    menus = fields.One2many('recipes.menureciperel', string='Recipes contained by menu')
+    menus = fields.One2many('recipes.menureciperel', 'menu_id', string='Recipes contained by menu')
     
 
 
