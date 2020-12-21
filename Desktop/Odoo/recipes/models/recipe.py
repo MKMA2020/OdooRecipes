@@ -5,8 +5,6 @@ class Recipe(models.Model):
         
     name = fields.Char(required=True)
     
-    ingredient = fields.Char(required=True)
-    
     recipeType = fields.Selection([
                            ('starter', 'Starter'),
                            ('main', 'Main'),

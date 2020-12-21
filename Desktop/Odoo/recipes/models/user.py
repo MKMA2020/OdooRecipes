@@ -15,4 +15,4 @@ class User(models.Model):
     
     recipes_id = fields.One2many('recipes.recipe', string='Recipes created')
     
-    UserRel_id = fields.One2many('recipes.userreciperel', string='Commenter')
+    userRel_id = fields.One2many('recipes.userreciperel', string='Commenter')
