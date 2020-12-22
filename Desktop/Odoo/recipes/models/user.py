@@ -20,5 +20,5 @@ class User(models.Model):
     # Recipes created by the user.
     recipes_id = fields.One2many('recipes.recipe', 'user_id',  string='Recipes created')
     
-    # 
+    # Ids of the comments of the user.
     userRel_id = fields.One2many('recipes.userreciperel', 'user_id',  string='Commenter')
