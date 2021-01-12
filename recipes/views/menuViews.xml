@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+    
+        <record model="ir.ui.view" id="recipes.list">
+            <field name="name">my_module list</field>
+            <field name="model">recipes.recipe</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="kCal"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="recipes.search">
+            <field name="name">my_module list</field>
+            <field name="model">recipes.menu</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                </search>
+            </field>
+        </record>
+    </data>
+</odoo>

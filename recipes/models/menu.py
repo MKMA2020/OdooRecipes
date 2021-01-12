@@ -11,6 +11,9 @@ class Menu(models.Model):
     #Name of the menu. Char type and required
     name = fields.Char(required=True)
     
+    description = fields.Char(required=True)
+
+    
     #Type of the menu, can be one of these. Selection type, and is required
     menuType = fields.Selection([
                                 ('breakfast', 'Breakfast'),
