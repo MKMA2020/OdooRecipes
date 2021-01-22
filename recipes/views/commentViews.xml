@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <record model="ir.ui.view" id="comment_form">
+            <field name="name">Form</field>
+            <field name="model">recipes.userreciperel</field>
+            <field name="arch" type="xml">
+                <form string="Comment Form">
+                    <sheet>
+                        <group>
+                            <field name="user_id" invisible="0"/>
+                            <field name="recipe_id" invisible="0"/>
+                            <field name="comment"/>
+                            <field name="rating"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="comment_list">
+            <field name="name">Comment List</field>
+            <field name="model">recipes.userreciperel</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="user_id" invisible="0"/>
+                    <field name="recipe_id" invisible="0"/>
+                    <field name="comment"/>
+                    <field name="rating"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

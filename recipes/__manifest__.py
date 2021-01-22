@@ -28,6 +28,7 @@
         # 'security/ir.model.access.csv',
         'views/views.xml',
         'views/recipeViews.xml',
+        'views/ingredientViews.xml',
         'views/templates.xml',
     ],
     # only loaded in demonstration mode

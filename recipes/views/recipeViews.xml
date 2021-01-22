@@ -10,6 +10,7 @@
                 <tree>
                     <field name="name"/>
                     <field name="kCal"/>
+                    <field name="recipeType"/>
                 </tree>
             </field>
         </record>
@@ -21,6 +22,31 @@
                 <search>
                     <field name="kCal"/>
                 </search>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="recipe_form">
+            <field name="name">Form</field>
+            <field name="model">recipes.recipe</field>
+            <field name="arch" type="xml">
+                <form string="Recipe Form">
+                    <group colspan="2">
+                        <group colspan="2">
+                            <field name="name"/>
+                            <field name="recipeType"/>
+                            <field name="kCal"/>
+                        </group>
+                        <notebook colspan="2">
+                            <page string="Ingredients">
+                                <field name="ingredients"/>
+                            </page>
+                            <page string="Comments">
+                                <field name="comments"/>
+                                 
+                            </page> 
+                        </notebook>
+                    </group>
+                </form>
             </field>
         </record>
     </data>
