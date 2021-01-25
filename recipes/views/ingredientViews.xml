@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+    
+        <record model="ir.ui.view" id="ingredient_list">
+            <field name="name">Ingredient List</field>
+            <field name="model">recipes.ingredient</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="ingredientType"/>
+                    <field name="user_id"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="ingredient_search">
+            <field name="name">Search</field>
+            <field name="model">recipes.ingredient</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="ingredientType"/>
+                    <field name="user_id"/>
+                </search>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="ingredient_form">
+            <field name="name">Form</field>
+            <field name="model">recipes.ingredient</field>
+            <field name="arch" type="xml">
+                <form string="Ingredient Form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="ingredientType"/>
+                            <field name="user_id" invisible="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

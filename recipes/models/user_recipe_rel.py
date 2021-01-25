@@ -7,10 +7,10 @@ class UserRecipeRel(models.Model):
    
    #Many2one field that links with the user. It represents the user that
    #wrote the commentary
-   user_id = fields.Many2one('res.users', string='Commenter', ondelete='cascade')
+   user_id = fields.Many2one('res.users', string='Commenter', ondelete='cascade', default=lambda self: self.env.uid)
    #Many2one field that links with the recipe. It represents the recipe in which
    #the commentary has been written
-   recipe_id = fields.Many2one('recipes.recipe', string='Recipe commented', ondelete='cascade')
+   recipe_id = fields.Many2one('recipes.recipe', string='Recipe commented', ondelete='cascade', default=lambda self: self.id)
    
    #Char field and required. The text of the commentary
    comment = fields.Char(required=True)

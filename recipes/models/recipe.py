@@ -1,4 +1,5 @@
 from odoo import models,fields,api
+import re
 
 class Recipe(models.Model):
     _name = 'recipes.recipe'
@@ -20,11 +21,16 @@ class Recipe(models.Model):
     
     ingredients = fields.Many2many('recipes.ingredient', string='Contains ingredients')
     
-    user_id = fields.Many2one('res.users', string='Recipe owner')
+    user_id = fields.Many2one('res.users', string='Recipe owner', default=lambda self: self.env.uid)
     
     comments = fields.One2many('recipes.userreciperel', 'user_id', string='Recipe commented')
     
     menus = fields.One2many('recipes.menureciperel', 'menu_id', string='Recipes contained by menu')
-    
+
+    @api.constrains('name')   
+    def _check_name(self):
+        for recipe in self:
+            if not re.match("^[a-zA-Z]+$", recipe.name):
+                raise ValidationError("Please enter valid name.")
 
 
