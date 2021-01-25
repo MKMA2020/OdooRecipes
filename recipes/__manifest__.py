@@ -30,6 +30,7 @@
         'views/views.xml',
         'views/recipeViews.xml',
         'views/ingredientViews.xml',
+        'views/menuViews.xml',
         'views/templates.xml',
     ],
     # only loaded in demonstration mode

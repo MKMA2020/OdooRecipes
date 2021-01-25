@@ -19,7 +19,7 @@
             <field name="res_model">recipes.menu</field>
             <field name="view_mode">tree,form</field>
         </record>
-            
+      
         <record model="ir.actions.act_window" id="recipes.action_window_user">
             <field name="name">Users</field>
             <field name="res_model">res.users</field>
