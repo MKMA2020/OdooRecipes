@@ -20,7 +20,7 @@ class Menu(models.Model):
                                 ('lunch', 'Lunch'),
                                 ('snack', 'Snack'),
                                 ('dinner', 'Dinner')
-                                ], string='Tipo', required=True)
+                                ], string='Type', required=True)
     
     #Links this model with users, represents the creator of the menu. Many2one with users
     user_id = fields.Many2one('res.users', string='Menu owner')
