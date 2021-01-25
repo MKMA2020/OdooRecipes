@@ -3,25 +3,50 @@
     <data>
         <!-- explicit list view definition -->
     
-        <record model="ir.ui.view" id="recipes.list">
-            <field name="name">my_module list</field>
-            <field name="model">recipes.recipe</field>
+        <record model="ir.ui.view" id="menus_list">
+            <field name="name">List of menus</field>
+            <field name="model">recipes.menu</field>
             <field name="arch" type="xml">
                 <tree>
                     <field name="name"/>
-                    <field name="kCal"/>
+                    <field name="menuType"/>
+                    <field name="description"/>
                 </tree>
             </field>
         </record>
         
-        <record model="ir.ui.view" id="recipes.search">
-            <field name="name">my_module list</field>
+        <record model="ir.ui.view" id="menus_search">
+            <field name="name">Search for menus</field>
             <field name="model">recipes.menu</field>
             <field name="arch" type="xml">
                 <search>
                     <field name="name"/>
+                    <field name="menuType"/>
                 </search>
             </field>
         </record>
+        
+        <record model="ir.ui.view" id="menus_form">
+            <field name="name">Menu creation</field>
+            <field name="model">recipes.menu</field>
+            <field name="arch" type="xml">
+                <form>
+                   <group colspan="4">                      
+                       <group>                          
+                           <field name="name"/>
+                           <field name="menuType"/>
+                           <field name="user_id"/>
+                           <field name="description"/>                       
+                       </group>
+                       <notebook colspan="4">
+                           <page string="Recipes included">
+                               <field name="menurel_id"/>   
+                           </page>
+                       </notebook>
+                   </group>
+                </form>
+            </field>
+        </record>
+        
     </data>
 </odoo>
