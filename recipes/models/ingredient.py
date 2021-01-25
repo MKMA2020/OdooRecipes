@@ -2,14 +2,14 @@ from odoo import api
 from odoo import fields
 from odoo import models
 from odoo.exceptions import ValidationError
-from python import re
+import re
 
 class Ingredient(models.Model):
     #Odoo model name identification
     _name = 'recipes.ingredient'
     
     #Name field for the Ingredient model. Char and required type.
-    name = fields.Char(required=True, string='Name', domain=[('name', '!=', record.name)])
+    name = fields.Char(required=True, string='Name')
     
     #IngredientType field for the Ingredient model. Selection and required type.
     ingredientType = fields.Selection([
@@ -36,10 +36,9 @@ class Ingredient(models.Model):
     #recipes field for the Ingredient model. Will contain the relation with the 
     #recipes that contain the ingredients.
     recipes = fields.Many2many('recipes.recipe', string='Part of recipes')
-
-    @api.constrains('name')              
+            
+    @api.constrains('name')   
     def _check_name(self):
-        raise ValidationError("Entra")
-        for record in self:
-            if record.name.isalpha():
-                raise ValidationError("You entered a number in the Name.")
+        for ingredient in self:
+            if not re.match("^[a-zA-Z]+$", ingredient.name):
+                raise ValidationError("Please enter valid name.")

@@ -41,8 +41,9 @@
                                 <field name="ingredients"/>
                             </page>
                             <page string="Comments">
-                                <field name="comments"/>
-                                 
+                                <field name="comments">
+                                    
+                                </field>
                             </page> 
                         </notebook>
                     </group>
