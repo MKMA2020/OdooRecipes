@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Author: Martin Valiente -->
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_users_form_inherit">
+
+            <field name="name">res.users.form.inherit</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_simple_form"/>
+            <field name="arch" type="xml">
+                <field name="fax" position="after">
+                    <notebook position="inside" colspan="2">
+                        <page string="Ingredients">
+                            <field name="ingredients_id"/>
+                        </page>
+                        <page string="Menus">
+                            <field name="menus_id"/>
+                        </page>
+                        <page string="Recipes">
+                            <field name="recipes_id"/>
+                        </page>
+                        <page string="Comments">
+                            <field name="userRel_id"/>
+                        </page>   
+                    </notebook>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,7 +1,13 @@
 <odoo>
     <data>
-        <record id="group_manager" model="res.groups">
-            <field name="name">OpenAcademy / Manager</field>
+        <record id="group_recipes_Normal" model="res.groups">
+            <field name="name">PocketChef / Normal</field>
+        </record>
+        <record id="group_recipes_Premium" model="res.groups">
+            <field name="name">PocketChef / Premium</field>
+        </record>        
+        <record id="group_recipes_Admin" model="res.groups">
+            <field name="name">PocketChef / Admin</field>
         </record>
     </data>
 </odoo>

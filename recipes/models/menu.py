@@ -23,7 +23,7 @@ class Menu(models.Model):
                                 ], string='Type', required=True)
     
     #Links this model with users, represents the creator of the menu. Many2one with users
-    user_id = fields.Many2one('res.users', string='Menu owner')
+    user_id = fields.Many2one('res.users', string='Menu owner', default=lambda self: self.env.uid)
     
     #Links the menu to the recipes, represents the recipes inside of the menu. One2many with Menu_recipe_rel
     menurel_id = fields.One2many('recipes.menureciperel', 'recipe_id', string='Menu has recipes')

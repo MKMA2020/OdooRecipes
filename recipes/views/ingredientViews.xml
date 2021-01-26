@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="windows-1252"?>
+<!-- Author: Martin Valiente -->
 <odoo>
     <data>
         <!-- explicit list view definition -->
@@ -10,7 +11,6 @@
                 <tree>
                     <field name="name"/>
                     <field name="ingredientType"/>
-                    <field name="user_id"/>
                 </tree>
             </field>
         </record>
@@ -36,7 +36,7 @@
                         <group>
                             <field name="name"/>
                             <field name="ingredientType"/>
-                            <field name="user_id" invisible="1"/>
+                            <field name="user_id" class="oe_read_only"/>
                         </group>
                     </sheet>
                 </form>

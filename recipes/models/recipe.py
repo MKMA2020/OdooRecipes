@@ -21,7 +21,7 @@ class Recipe(models.Model):
     
     ingredients = fields.Many2many('recipes.ingredient', string='Contains ingredients')
     
-    user_id = fields.Many2one('res.users', string='Recipe owner', default=lambda self: self.env.uid)
+    user_id = fields.Many2one('res.users', string='Recipe owner', default = lambda self: self.env.uid)
     
     comments = fields.One2many('recipes.userreciperel', 'user_id', string='Recipe commented')
     

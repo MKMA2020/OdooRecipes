@@ -35,7 +35,7 @@
                        <group>                          
                            <field name="name"/>
                            <field name="menuType"/>
-                           <field name="user_id"/>
+                           <field name="user_id" class="oe_read_only"/>
                            <field name="description"/>                       
                        </group>
                        <notebook colspan="4">
