@@ -1,2 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 
+recipe_premium,Premium user,model_recipes_menu,group_recipes_premium,1,1,1,0
+recipe_admin,Admin user,model_recipes_menu,group_recipes_admin,1,1,1,1
+recipe_normal,Normal user,model_recipes_menu,,1,0,0,0
