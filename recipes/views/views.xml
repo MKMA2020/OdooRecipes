@@ -1,6 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Author: Martin Valiente -->
 <odoo>
     <data>
-        
         <!-- actions opening views on models -->
         <record model="ir.actions.act_window" id="recipes.action_window_recipe">
             <field name="name">Recipes</field>

@@ -4,7 +4,7 @@ from odoo import models
 
 #Model of the menu
 class Menu(models.Model):
-    
+    #Developed by Kerman
     #Name of the model in the database
     _name = 'recipes.menu'
     

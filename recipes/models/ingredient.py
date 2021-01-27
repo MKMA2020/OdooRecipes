@@ -5,6 +5,7 @@ from odoo.exceptions import ValidationError
 import re
 
 class Ingredient(models.Model):
+    # Developed by Martin Valiente Ainz
     #Odoo model name identification
     _name = 'recipes.ingredient'
     

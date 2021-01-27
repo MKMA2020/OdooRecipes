@@ -2,6 +2,7 @@ from odoo import models,fields,api
 
 # Model of the user.
 class User(models.Model):
+    #Developed by Aitor and Martin Valiente
     _inherit = 'res.users'
     
     # Type of the user.

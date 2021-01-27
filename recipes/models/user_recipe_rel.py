@@ -2,6 +2,7 @@ from odoo import models,fields,api
 
 #Class of the relation between the user and the recipe, representing commentaries
 class UserRecipeRel(models.Model):
+    #Developed by Kerman and Martin
     #Name of the model
    _name = 'recipes.userreciperel'
    

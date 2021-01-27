@@ -2,6 +2,7 @@ from odoo import models,fields,api
 import re
 
 class Recipe(models.Model):
+    #Developed by Martin Gros and Martin Valiente
     _name = 'recipes.recipe'
         
     name = fields.Char(required=True)

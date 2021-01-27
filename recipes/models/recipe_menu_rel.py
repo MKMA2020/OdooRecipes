@@ -3,6 +3,7 @@ from odoo import fields
 from odoo import models
 
 class MenuRecipeRel(models.Model):
+    #Developed by Kerman and Martin
     #Relationship class between menu and recipe.
     _name = 'recipes.menureciperel'
     
