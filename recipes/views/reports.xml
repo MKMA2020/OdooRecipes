@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="windows-1252"?>
+
+
+<odoo>
+    <template id="recipes.report_ingredients">
+        <t t-call="report.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="report.external_layout">
+                    <div class="page">
+                        <br/><br/><br/><br/><br/>
+                        <ul>
+                            <t t-foreach="doc.name" t-as="ingredient">
+                            <li>Name: <span t-field="doc.name"/></li>
+                            <li>Type: <span t-field="doc.ingredientType"/></li>
+                            </t>
+                        </ul>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+   
+   
+   
+    <report id="ingredient_report"
+            model="recipes.ingredient"
+            string="Ingredient list report"
+            name="recipes.report_ingredients"
+            file="recipes.report_ingredient_list"
+            report_type="qweb-pdf"/>
+</odoo>
+

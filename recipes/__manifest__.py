@@ -33,6 +33,7 @@
         'views/menuViews.xml',
         'views/templates.xml',
         'views/userViews.xml',
+        'views/reports.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
