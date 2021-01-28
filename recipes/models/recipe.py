@@ -31,7 +31,7 @@ class Recipe(models.Model):
     @api.constrains('name')   
     def _check_name(self):
         for recipe in self:
-            if not re.match("^[a-zA-Z]+$", recipe.name):
+            if not re.match("^[a-z A-Z]+$", recipe.name):
                 raise ValidationError("Please enter valid name.")
 
 
